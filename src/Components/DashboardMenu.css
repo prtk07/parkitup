@@ -1,0 +1,33 @@
+.dashboardmenu-container {
+  display: flex;
+  flex-direction: column;
+  /* background-color: aqua; */
+  width: 20%;
+  height: 100%;
+  align-items: center;
+  /* border-right: 1px solid rgb(82, 82, 82); */
+}
+
+.buttons-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+.buttons-container button {
+  width: 100%;
+  font-size: 18px;
+  word-spacing: 3px;
+  font-weight: 300;
+  /* margin: 20px 0; */
+  background-color: rgba(240, 248, 255, 0);
+  color: black;
+  box-shadow: none;
+  border: 0px;
+  padding: 20px 55px;
+  border-radius: 3px;
+}
+
+.buttons-container button:hover {
+  background-color: rgba(0, 0, 0, 0.247);
+}

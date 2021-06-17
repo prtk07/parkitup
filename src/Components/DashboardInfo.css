@@ -1,0 +1,15 @@
+.dashboard-info-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.Info {
+  display: flex;
+  flex-direction: column;
+}
+
+.vehicle {
+  display: flex;
+  gap: 20px;
+}

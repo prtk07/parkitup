@@ -1,0 +1,61 @@
+.input {
+  display: flex;
+  flex-direction: column;
+}
+.arrivalinput {
+  width: 25%;
+  height: 40px;
+  margin-bottom: 2%;
+  margin-top: 1%;
+  border: 2px solid rgba(76, 77, 94, 0.5);
+  border-radius: 5px;
+  background-color: rgba(94, 51, 150, 0.04);
+}
+.departureinput {
+  width: 25%;
+  height: 40px;
+  margin-bottom: 2%;
+  margin-top: 1%;
+  border: 2px solid rgba(76, 77, 94, 0.5);
+  border-radius: 5px;
+  background-color: rgba(94, 51, 150, 0.04);
+}
+.arrivallable {
+  font-weight: bold;
+  font-size: larger;
+  margin-top: 2%;
+}
+.departurelable {
+  font-weight: bold;
+  font-size: larger;
+}
+
+.vehiclelable {
+  font-weight: bold;
+  font-size: larger;
+}
+
+.buttonlable {
+  font-size: larger;
+}
+.submitbutton {
+  width: 10%;
+  height: 30px;
+}
+.buttons {
+  margin-top: 1%;
+}
+.submitbutton {
+  margin: 10px 0px;
+  /* padding: 8px 35px; */
+  font-size: 15px;
+  background-color: rgb(8, 112, 230);
+  box-shadow: none;
+  border: 0px;
+  border-radius: 3px;
+  color: aliceblue;
+  font-weight: 800;
+  cursor: pointer;
+  text-align: center;
+  height: 40px;
+}

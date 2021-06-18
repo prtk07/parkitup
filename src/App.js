@@ -1,5 +1,10 @@
 import "./App.css";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Redirect,
+} from "react-router-dom";
 import Home from "./Views/Home";
 import Header from "./Components/Header";
 import LoginPage from "./Views/LoginPage";
@@ -15,10 +20,10 @@ function App() {
             <Home />
           </Route>
           <Route path="/login">
-            <LoginPage />
+            {localStorage.token ? <Redirect to="/" /> : <LoginPage />}
           </Route>
           <Route path="/dashboard">
-            <Dashboard />
+            {localStorage.token ? <Dashboard /> : <Redirect to="/" />}
           </Route>
         </Switch>
       </Router>

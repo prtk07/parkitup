@@ -1,0 +1,22 @@
+.Image {
+  width: 100%;
+}
+.background-container {
+  text-align: center;
+}
+.background-container .content {
+}
+.headline {
+  color: white;
+  text-align: center;
+  font-size: 200%;
+  color: black;
+}
+.paragraph {
+  color: white;
+  text-align: center;
+  font-size: 120%;
+  color: black;
+  font-weight: 700;
+  margin: 0px 0px;
+}

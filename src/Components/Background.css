@@ -3,6 +3,8 @@
 }
 .background-container {
   text-align: center;
+  width: 90%;
+  object-fit: contain;
 }
 .background-container .content {
 }

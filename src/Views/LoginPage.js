@@ -1,7 +1,9 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import "./LoginPage.css";
 
-function LoginPage() {
+function LoginPage(props) {
+  // const history = useHistory();
   const [loginpage, setLoginpage] = useState(true);
   const [username, setUsername] = useState("");
   const [name, setName] = useState("");
@@ -29,9 +31,11 @@ function LoginPage() {
       .then((data) => {
         if (data.message) alert(data.message);
         else {
-          console.log(data);
+          // console.log(data);
+          props.handleUser(data.user);
           localStorage.setItem("token", data.token);
-          window.location.replace("/");
+          props.setauth();
+          // history.goBack();
         }
       })
       .catch((e) => {
@@ -54,12 +58,21 @@ function LoginPage() {
       .then((data) => {
         if (data.message) alert(data.message);
         else {
-          console.log(data);
+          let obj = {
+            name: data.user.name,
+            username: data.user.username,
+            mobile: data.user.mobile,
+          };
+
+          props.handleUser(obj);
           localStorage.setItem("token", data.token);
-          window.location.replace("/");
+          props.setauth();
+
+          // history.goBack();
         }
       })
       .catch((e) => {
+        // console.log(e);
         alert("Server Not Responding");
       });
   }
@@ -70,20 +83,33 @@ function LoginPage() {
         <div className="login">
           <h1>Login</h1>
           <div className="inputs">
-            <input placeholder="Username" className="input-box" type="text" />
+            <input
+              placeholder="Username"
+              className="input-box"
+              type="text"
+              onChange={(e) => {
+                setUsername(e.target.value);
+              }}
+            />
             <input
               placeholder="Password"
               className="input-box"
               type="password"
+              onChange={(e) => {
+                setPassword(e.target.value);
+              }}
             />
           </div>
+
           <button
             onClick={() => {
+              console.log("fuck login");
               Login(username, password);
             }}
           >
             Login
           </button>
+
           <div className="signup-link-container">
             <p>Not registered yet?</p>
             <p className="signup-link" onClick={toggleLogin}>

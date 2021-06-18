@@ -1,0 +1,45 @@
+.popup-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.377);
+}
+
+.popup {
+  padding: 20px;
+  height: 60%;
+  width: 25%;
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(255, 255, 255);
+  border: 1px solid rgb(160, 160, 160);
+  justify-content: space-around;
+  align-items: center;
+  border-radius: 4px;
+}
+
+.popup input {
+  padding: 7px 5px;
+}
+
+.popup button {
+  width: 40%;
+  height: 9%;
+  padding: 5px 0px 5px 0;
+}
+
+.vehicle-type-section {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+.radio-label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

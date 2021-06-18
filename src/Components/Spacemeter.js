@@ -1,9 +1,34 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./Spacemeter.css";
 
 function Spacemeter() {
   const [twowheelslots, setTwowheelsots] = useState(200);
   const [fourwheelslots, setFourwheelslots] = useState(100);
+
+  useEffect(() => {
+    fetch("http://localhost:8080/api/availability")
+      .then((res) => res.json())
+      .then((data) => {
+        if (data) {
+          setTwowheelsots(data.twowheels);
+          setFourwheelslots(data.fourwheels);
+        }
+      });
+    let cycle = setInterval(() => {
+      fetch("http://localhost:8080/api/availability")
+        .then((res) => res.json())
+        .then((data) => {
+          if (data) {
+            setTwowheelsots(data.twowheels);
+            setFourwheelslots(data.fourwheels);
+          }
+        });
+    }, 10000);
+
+    return () => {
+      clearInterval(cycle);
+    };
+  }, []);
 
   return (
     <div className="spacemeter-container">
